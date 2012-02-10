@@ -1,0 +1,39 @@
+package simulator;
+
+import java.util.ArrayList;
+import java.util.Queue;
+
+public class Scheduler {
+	private int currentAlgorithm;
+	private Queue<ArrayList<Passenger>> requestQueue;
+	private ArrayList<Algorithm> possibleAlgorithms;
+	private ArrayList<ElevatorController> elevatorList;
+
+	public Scheduler(Queue<ArrayList<Passenger>> rq,
+			ArrayList<Algorithm> pa, ArrayList<ElevatorController> el, int ca) {
+		requestQueue = rq;
+		possibleAlgorithms = pa;
+		elevatorList = el;
+		currentAlgorithm = 0;
+	}
+
+	public void schedulerLoop()
+	{
+		while(true)
+		{
+			while(requestQueue.isEmpty());
+			possibleAlgorithms.get(currentAlgorithm).assignFloor(requestQueue.remove(),elevatorList);
+			elevators.get(0).getFloor(requests.get(i));
+			//mutex for data structure
+			requests.remove(i);
+			requests.add(i, new ArrayList<Passenger>);
+			//mutex for data structure
+
+		}
+	}
+
+	public void changeAlgorithm(int newAlgorithm) {
+		currentAlgorithm = newAlgorithm;
+	}
+
+}

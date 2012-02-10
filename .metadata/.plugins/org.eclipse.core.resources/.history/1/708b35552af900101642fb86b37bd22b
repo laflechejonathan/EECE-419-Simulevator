@@ -1,0 +1,30 @@
+package simulator;
+
+import java.util.ArrayList;
+
+public class Scheduler {
+
+	private int currentAlgorithm;
+	private ArrayList<Passenger> requestQueue;
+	// Could imagine having some type of Algorithm construct where you define
+	// multiple preset Algorithm methods and an algorithm label that you use to
+	// figure out which algorithm is current. Maybe it should be an algorithm
+	// Interface which you implement, and the scheduler always points to one
+	// Algorithm object, you create a new different one.. not sure yet.
+	
+	public Scheduler(ArrayList<Passenger> rq)
+	{
+		currentAlgorithm = 0;
+		requestQueue = rq;
+	}
+	
+	public void schedulerLoop()
+	{
+		while(true)
+		{
+			while(requestQueue.isEmpty());
+			switch currentAlgorithm:
+				case 0: processRequest();
+		}
+	}
+}

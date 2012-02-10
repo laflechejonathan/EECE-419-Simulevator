@@ -1,0 +1,8 @@
+package simulator;
+
+import java.util.ArrayList;
+
+
+public interface Algorithm {
+	int handleRequest(int req, ArrayList<ElevatorController> elevators);
+}

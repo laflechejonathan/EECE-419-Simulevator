@@ -1,0 +1,13 @@
+package simulator;
+
+import java.util.ArrayList;
+
+public class Request {
+	public int floor;
+	private ArrayList<Passenger> passengers;
+	public int handleRequest(Request req, ArrayList<ElevatorController> elevators)
+	{
+		floor = f;
+		passengers=p;
+	}
+}

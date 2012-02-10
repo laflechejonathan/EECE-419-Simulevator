@@ -1,0 +1,21 @@
+package simulator;
+
+import java.util.Random;
+import java.util.concurrent.Semaphore;
+
+// I'm not stealing your work but I am doing a little test with concurrency
+public class RequestSimulator extends Thread {
+	private Semaphore requestSemaphore;
+	public RequestSimulator(Semaphore rs)
+	{
+		requestSemaphore = rs;
+	}
+	
+	public void run()
+	{
+		Random rand = new Random(); 
+		while(true)
+			Thread.sleep()
+	}
+
+}

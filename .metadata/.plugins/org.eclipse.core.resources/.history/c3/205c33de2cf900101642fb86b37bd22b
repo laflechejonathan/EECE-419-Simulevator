@@ -1,0 +1,6 @@
+package simulator;
+
+
+public interface Algorithm {
+	void assignFloor(ArrayList<Passenger> requests, ArayList<ElevatorController> elevators);
+}

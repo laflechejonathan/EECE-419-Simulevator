@@ -1,0 +1,22 @@
+package simulator;
+
+import java.util.ArrayList;
+
+public class DummyAlgorithm implements Algorithm
+{
+
+	public DummyAlgorithm()
+	{
+		
+	}
+	public int handleRequest(Request req, ArrayList<ElevatorController> elevators)
+	{
+		for (int i = 0; i < elevators.size();i++)
+		{
+			if (elevator.getDirection() == req.direction)
+				if ((-elevator.getFloor()*direction + request*direction ) > 0)
+					
+		}
+		return 0;
+	}
+}

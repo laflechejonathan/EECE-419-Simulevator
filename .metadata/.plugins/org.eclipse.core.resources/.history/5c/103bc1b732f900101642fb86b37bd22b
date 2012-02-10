@@ -1,0 +1,13 @@
+package simulator;
+
+import java.util.ArrayList;
+
+public class Request {
+	public int floor;
+	private ArrayList<Passenger> passengers;
+	public Request (int f, ArrayList<Passenger> p)
+	{
+		floor = f;
+		passengers=p;
+	}
+}

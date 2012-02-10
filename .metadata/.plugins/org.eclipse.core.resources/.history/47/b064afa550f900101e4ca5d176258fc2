@@ -1,0 +1,22 @@
+package driver;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import simulator.*;
+
+public class Driver {
+    public static void main (String args[]) {
+    	//this code is complete bullshit used to test the Scheduler Class
+    	Queue<Integer> fakeQueue = new LinkedList<Integer>();
+    	fakeQueue.add(1);
+    	fakeQueue.add(2);
+    	fakeQueue.add(5);
+    	
+    	Algorithm fakeAlgorithm = new DummyAlgorithm();
+    	ArrayList<Algorithm> fakeAlgorithmList = new ArrayList<Algorithm>();
+    	fakeAlgorithmList.add(fakeAlgorithm);
+    	
+    	ElevatorController fakeEC = new ElevatorController();
+    }
+}

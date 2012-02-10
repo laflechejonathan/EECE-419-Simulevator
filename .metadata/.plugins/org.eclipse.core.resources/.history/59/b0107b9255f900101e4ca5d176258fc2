@@ -1,0 +1,11 @@
+package simulator;
+
+public class Request {
+	public int floor;
+	public int direction; // 1 is up, -1 is down
+
+	public Request(int f, int d) {
+		floor = f;
+		direction = d;
+	}
+}

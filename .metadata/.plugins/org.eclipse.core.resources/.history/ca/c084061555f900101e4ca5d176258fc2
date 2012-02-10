@@ -1,0 +1,32 @@
+package driver;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Queue;
+import java.util.concurrent.Semaphore;
+
+import simulator.*;
+
+public class Driver {
+    public static void main (String args[]) {
+    	//this code is complete bullshit used to test the Scheduler Class
+    	Queue<Request> fakeQueue = new LinkedList<Integer>();
+    	fakeQueue.add(new Request(1,-1));
+    	fakeQueue.add(new Request(6,-1);
+    	fakeQueue.add(new Request(7,1);
+    	Semaphore queueSemaphore = new Semaphore(1);
+    	
+    	Algorithm fakeAlgorithm = new DummyAlgorithm();
+    	ArrayList<Algorithm> fakeAlgorithmList = new ArrayList<Algorithm>();
+    	fakeAlgorithmList.add(fakeAlgorithm);
+    	
+    	ElevatorController fakeEC = new ElevatorController();
+    	ArrayList<ElevatorController> fakeECList = new ArrayList<ElevatorController>();
+    	fakeECList.add(fakeEC);
+    	
+    	Scheduler theScheduler = new Scheduler(fakeQueue,fakeAlgorithmList,fakeECList,0,queueSemaphore);
+    	RequestSimulator theRequestSimulator = new RequestSimulator(fakeQueue, queueSemaphore);
+    	theRequestSimulator.start();
+    	theScheduler.start();
+    }
+}

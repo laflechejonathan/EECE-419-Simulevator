@@ -1,0 +1,8 @@
+package simulator;
+
+import java.util.ArrayList;
+
+
+public interface Algorithm {
+	void assignFloor(ArrayList<ArrayList<Passenger>> requests, ArrayList<ElevatorController> elevators);
+}

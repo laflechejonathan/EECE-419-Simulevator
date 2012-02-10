@@ -1,0 +1,50 @@
+package simulator;
+
+import java.util.ArrayList;
+import java.util.Queue;
+import java.util.concurrent.Semaphore;
+
+public class Scheduler extends Thread {
+	private int currentAlgorithm;
+	private Queue<Request> requestQueue;
+	private ArrayList<Algorithm> possibleAlgorithms;
+	private ArrayList<ElevatorController> elevatorList;
+	private Semaphore requestSemaphore;
+
+	public Scheduler(Queue<Request> rq, ArrayList<Algorithm> pa,
+			ArrayList<ElevatorController> el, int ca, Semaphore rs) {
+		requestQueue = rq;
+		possibleAlgorithms = pa;
+		elevatorList = el;
+		currentAlgorithm = 0;
+		requestSemaphore = rs;
+	}
+
+	public void run()
+	{
+		while(true)
+		{
+			try 
+			{
+
+				while(requestQueue.isEmpty());
+				requestSemaphore.acquire();
+				int currentRequest = requestQueue.remove();
+				requestSemaphore.release();
+				int elevatorIndex = possibleAlgorithms.get(currentAlgorithm).handleRequest(currentRequest,elevatorList);
+				elevatorList.get(elevatorIndex).getRequest(currentRequest);
+				System.out.println("I gave a  request to floor " + currentRequest + " to elevator " + elevatorIndex);
+			} 
+			catch (InterruptedException e)
+			{
+				e.printStackTrace();
+			}
+		}
+
+	}
+
+	public void changeAlgorithm(int newAlgorithm) {
+		currentAlgorithm = newAlgorithm;
+	}
+
+}

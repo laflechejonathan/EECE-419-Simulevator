@@ -1,0 +1,35 @@
+package simulator;
+
+import java.util.ArrayList;
+import java.util.Queue;
+
+public class Scheduler extends Threads{
+	private int currentAlgorithm;
+	private Queue<Integer> requestQueue;
+	private ArrayList<Algorithm> possibleAlgorithms;
+	private ArrayList<ElevatorController> elevatorList;
+
+	public Scheduler(Queue<Integer> rq, ArrayList<Algorithm> pa,
+			ArrayList<ElevatorController> el, int ca) {
+		requestQueue = rq;
+		possibleAlgorithms = pa;
+		elevatorList = el;
+		currentAlgorithm = 0;
+	}
+
+	public void schedulerLoop()
+	{
+		while(true)
+		{
+			while(requestQueue.isEmpty());
+			int currentRequest = requestQueue.remove();
+			int elevatorIndex = possibleAlgorithms.get(currentAlgorithm).handleRequest(currentRequest,elevatorList);
+			elevatorList.get(elevatorIndex).getRequest(currentRequest);
+		}
+	}
+
+	public void changeAlgorithm(int newAlgorithm) {
+		currentAlgorithm = newAlgorithm;
+	}
+
+}

@@ -1,0 +1,26 @@
+package simulator;
+
+public class ElevatorController {
+
+	private boolean flip = true;
+	public void getRequest(Request r) {
+		// Take a request that the scheduler gives to you and somehow deal with
+		// it
+		// in this case the request is an int which represents a floor. Perfect.
+		// What that means is, fuck you elevator, I don't care what you're doing
+		// right now but at some point you're gonna go to this floor.. Once you
+		// get to that floor you're going to access that structure for that
+		// floor which has a bunch of passengers that are constantly chilling.
+		// And you will take those passengers you see and get them onboard and
+		// put them in your passenger list. Once that happens you'll be like
+		// sweet I have these passengers they want to go places. And you'll go
+		// to those places.
+	}
+	public int getDirection()
+	{
+		flip = !flip;
+		if (flip) return -1;
+		return 1;
+		//-1 means going down, 1, going up
+	}
+}

@@ -1,0 +1,16 @@
+package simulator;
+
+import java.util.ArrayList;
+
+public class DummyAlgorithm implements Algorithm
+{
+
+	public DummyAlgorithm()
+	{
+		
+	}
+	public 	int assignFloor(ArrayList<Passenger> requests, ArrayList<ElevatorController> elevators)
+	{
+		return 0;
+	}
+}

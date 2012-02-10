@@ -1,0 +1,25 @@
+package simulator;
+
+public class Scheduler {
+
+	private int currentAlgorithm;
+	private ArrayList<Passenger>;
+	// Could imagine having some type of Algorithm construct where you define
+	// multiple preset Algorithm methods and an algorithm label that you use to
+	// figure out which algorithm is current. Maybe it should be an algorithm
+	// Interface which you implement, and the scheduler always points to one
+	// Algorithm object, you create a new different one.. not sure yet.
+	
+	public Scheduler()
+	{
+		currentAlgorithm = 0;
+	}
+	
+	public void schedulerLoop()
+	{
+		while(true)
+		{
+			while()
+		}
+	}
+}

@@ -1,0 +1,6 @@
+package simulator;
+
+public interface Algorithm {
+	private ArrayList<ElevatorController> elevatorList;
+	void assignFloor();
+}

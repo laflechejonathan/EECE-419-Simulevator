@@ -1,0 +1,7 @@
+Initial Floor	/	Destination Floor	/	Delay(ms)
+Comma Split. Any Line with a comma will be READ!
+
+0,	0,	10000
+14,	2,	11000
+10,	19,	1000
+

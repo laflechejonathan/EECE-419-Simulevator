@@ -1,0 +1,32 @@
+package simulator;
+
+import java.util.ArrayList;
+
+public class Scheduler {
+	private int currentAlgorithm;
+	private ArrayList<Passenger> requestQueue;
+	private ArrayList<Algorithm> possibleAlgorithms;
+	private ArrayList<ElevatorController> elevatorList;
+	public Scheduler(ArrayList<Passenger> rq, ArrayList<Algorithm> pa, int ca)
+	{
+		requestQueue = rq;
+		possibleAlgorithms = pa;
+		currentAlgorithm = 0;
+	}
+	
+	public void schedulerLoop()
+	{
+		while(true)
+		{
+			while(requestQueue.isEmpty());
+			possibleAlgorithms.get(currentAlgorithm).assignFloor(requestQueue);
+		}
+	}
+	
+	public void changeAlgorithm(int newAlgorithm)
+	{
+		currentAlgorithm = newAlgorithm;
+	}
+	
+	
+}

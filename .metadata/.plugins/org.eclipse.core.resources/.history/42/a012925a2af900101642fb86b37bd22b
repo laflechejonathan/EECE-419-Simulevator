@@ -1,0 +1,22 @@
+package simulator;
+
+import java.util.ArrayList;
+
+public class Scheduler {
+	private Algorithm currentAlgorithm
+	private ArrayList<Passenger> requestQueue;
+	
+	public Scheduler(ArrayList<Passenger> rq)
+	{
+		currentAlgorithm = 0;
+		requestQueue = rq;
+	}
+	
+	public void schedulerLoop()
+	{
+		while(true)
+		{
+			while(requestQueue.isEmpty());
+		}
+	}
+}

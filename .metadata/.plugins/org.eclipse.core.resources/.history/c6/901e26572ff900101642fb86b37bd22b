@@ -1,0 +1,9 @@
+package simulator;
+
+public class ElevatorController {
+
+	public void getRequest()
+	{
+		//Take a request that the scheduler gives to you and somehow deal with it
+	}
+}

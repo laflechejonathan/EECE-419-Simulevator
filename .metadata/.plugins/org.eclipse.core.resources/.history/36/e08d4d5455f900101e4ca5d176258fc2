@@ -1,0 +1,40 @@
+package simulator;
+
+import java.util.Queue;
+import java.util.Random;
+import java.util.concurrent.Semaphore;
+
+// I'm not stealing your work but I am doing a little test with concurrency
+// Which is to say feel free to delete all of this and start over
+
+// K so if you can guarantee that you will populate both the requestQueue 
+// and the passengerList, whatever your implementation, this is going to be awesome
+
+public class RequestSimulator extends Thread {
+	private Semaphore requestSemaphore;
+	private Queue<Request> requestQueue;
+
+	public RequestSimulator(Queue<Request> rq, Semaphore rs) {
+		requestSemaphore = rs;
+		requestQueue = rq;
+	}
+
+	public void run() {
+		Random rand = new Random();
+		while (true) {
+			try {
+				sleep(rand.nextInt(5000));
+				int floor = rand.nextInt(20);
+				int direction = 0;
+				if (rand.nextBoolean()) direction = 1;
+				else direction = -1;
+				requestSemaphore.acquire();
+				requestQueue.add(new Request(rand.nextInt(20)) );
+				requestSemaphore.release();
+			} catch (InterruptedException e) {
+				e.printStackTrace();
+			}
+		}
+	}
+
+}

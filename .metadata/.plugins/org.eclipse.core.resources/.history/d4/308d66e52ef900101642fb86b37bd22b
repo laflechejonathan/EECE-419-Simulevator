@@ -1,0 +1,11 @@
+package simulator;
+
+public class Request {
+	public int floor;
+	private ArrayList<Passenger> passengers;
+	public Request (int f, ArrayList<Passenger> p)
+	{
+		floor = f;
+		passengers=p;
+	}
+}

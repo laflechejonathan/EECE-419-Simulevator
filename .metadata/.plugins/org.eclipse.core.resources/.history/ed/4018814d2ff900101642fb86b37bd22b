@@ -1,0 +1,9 @@
+package simulator;
+
+public class ElevatorController {
+
+	public void getRequest()
+	{
+		
+	}
+}

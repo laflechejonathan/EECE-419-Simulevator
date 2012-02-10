@@ -1,0 +1,7 @@
+package simulator;
+
+public class Request {
+	private int floor;
+	private ArrayList<Passenger> passengers;
+	
+}
